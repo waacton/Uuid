@@ -15,11 +15,11 @@ Prototype demonstration available at https://uuid.wacton.xyz/
 
 | Variable  | Value                                                        | Example  |
 |-----------|--------------------------------------------------------------|----------|
-| Colour1   | Concatenate characters 0, 1, 2, 3, 4, 5                      | `#2e3440` |
-| Colour2   | Concatenate characters 6, 7, 9, 10, 11, 12                   | #8fbcbb | 
-| Colour3   | Concatenate characters 15, 16, 17, 20, 21, 22                | `81a1c1` |
-| Colour4   | Concatenate characters 24, 25, 26, 27, 28, 29                | `b48ead` |
-| Colour5   | Concatenate characters 30, 31, 32, 33, 34, 35                | `d8dee9` |
+| Colour 1  | Concatenate characters 0, 1, 2, 3, 4, 5                      | `2e3440` |
+| Colour 2  | Concatenate characters 6, 7, 9, 10, 11, 12                   | `8fbcbb` | 
+| Colour 3  | Concatenate characters 15, 16, 17, 20, 21, 22                | `81a1c1` |
+| Colour 4  | Concatenate characters 24, 25, 26, 27, 28, 29                | `b48ead` |
+| Colour 5  | Concatenate characters 30, 31, 32, 33, 34, 35                | `d8dee9` |
 | Rotation  | Character 19: `8` = 0° · `9` = 90° · `a` = 180° · `b` = 270° | `8` = 0° |
 
 Characters 8, 13, 18, 23 are ignored; they are `-` delimiters that do not change.
