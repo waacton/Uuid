@@ -1,5 +1,7 @@
 # UUID Englyphenation
-Visualise UUIDs. Display a unique glyph for each of the 5,316,911,983,139,663,491,615,228,241,121,378,304 v4 UUIDs.
+Visualise UUIDs.
+
+Display a unique glyph for each of the 5,316,911,983,139,663,491,615,228,241,121,378,304 v4 UUIDs.
 
 Choose a UUID based on how nice it looks!
 
