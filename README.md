@@ -25,3 +25,14 @@ Prototype demonstration available at https://uuid.wacton.xyz/
 Characters 8, 13, 18, 23 are ignored; they are `-` delimiters that do not change.
 
 Character 14 is ignored; it is always `4` signifying v4 UUID.
+
+Image size is relative to the inner margin, which should be a multiple of 2 for a pixel-perfect image.
+For reference, when the inner margin is 2 pixels, the full image is 48x48 pixels.
+
+Colours and dimensions are set as follows. The dimensions guide is based on an inner margin of 20 pixels.
+
+![Glyph colours](./Colours.png)
+
+![Glyph dimensions](./Dimensions.png)
+
+Any rotation is applied clockwise once the colours have been applied at the correct dimensions.
