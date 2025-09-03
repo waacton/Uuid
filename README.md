@@ -15,7 +15,7 @@ Prototype demonstration available at https://uuid.wacton.xyz/
 | `eceff4bf-616a-4ebc-bb8b-88c0d04c566a` | ![Glyph of eceff4bf-616a-4ebc-bb8b-88c0d04c566a](https://uuid.wacton.xyz/eceff4bf-616a-4ebc-bb8b-88c0d04c566a) |
 | `40404640-e8ff-4e8e-a846-e840ffe8e8ff` | ![Glyph of 40404640-e8ff-4e8e-a846-e840ffe8e8ff](https://uuid.wacton.xyz/40404640-e8ff-4e8e-a846-e840ffe8e8ff) |
 
-## Specification 1.0
+## Specification 1.0-alpha
 
 The example in this section uses `2e34408f-bcbb-481a-81c1-b48eadd8dee9`.
 
