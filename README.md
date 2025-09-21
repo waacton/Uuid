@@ -40,8 +40,8 @@ For reference, when the inner margin is 2 pixels, the full image is 48x48 pixels
 
 Colours and dimensions are set as follows. The dimensions guide is based on an inner margin of 20 pixels.
 
-![Glyph colours](./Colours.png)
+![Glyph colours](colours.png)
 
-![Glyph dimensions](./Dimensions.png)
+![Glyph dimensions](dimensions.png)
 
 Any rotation is applied clockwise once the colours have been applied at the correct dimensions.

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en-">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>UUID englyphenation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="generateUuid()">
+    <div class="max-width-wrapper">
+        <div class="column">
+            <div id="uuidImage" class="image"></div>
+            <pre id="uuidText" class="text">-</pre>
+            <button id="copyButton" onclick="copyUuid()">copy uuid</button>
+            <button onclick="generateUuid()">generate a new uuid</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
