@@ -26,7 +26,6 @@ function isValidV4(uuid) {
 function createSvg(uuid) {
     const colours = getColours(uuid);
     const rotation = getRotation(uuid);
-
     return `
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
             <g transform="rotate(${rotation} 240 240)">

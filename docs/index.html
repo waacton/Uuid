@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="UUID englyphenation">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://repository-images.githubusercontent.com/1049241490/f3bd1653-a8d9-4b6f-a714-d542c64fa9e0">
+    <meta property="og:url" content="https://uuid.wacton.xyz/">
+    <meta property="og:description" content="🪪 UUID englyphenation">
+    <meta property="og:site_name" content="UUID englyphenation">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/png" href="favicon.png" />
     <title>UUID englyphenation</title>
     <link rel="stylesheet" href="style.css">
@@ -13,7 +22,10 @@
         <div class="column">
             <div id="uuidImage" class="image"></div>
             <pre id="uuidText" class="text">-</pre>
-            <button id="copyButton" onclick="copyUuid()">copy uuid</button>
+            <div class="row">
+                <button id="copyButton" onclick="copyUuid()">copy uuid</button>
+                <button onclick="copyUrl()">copy url</button>
+            </div>
             <button onclick="generateUuid()">generate a new uuid</button>
         </div>
     </div>
