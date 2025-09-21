@@ -5,7 +5,7 @@ Display a unique glyph for each of the 5,316,911,983,139,663,491,615,228,241,121
 
 Choose a UUID based on how nice it looks!
 
-Prototype demonstration available at https://waacton.github.io/Uuid/
+Prototype demonstration available at https://uuid.wacton.xyz
 
 ## Examples
 
