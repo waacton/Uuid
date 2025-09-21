@@ -5,16 +5,16 @@ Display a unique glyph for each of the 5,316,911,983,139,663,491,615,228,241,121
 
 Choose a UUID based on how nice it looks!
 
-Prototype demonstration available at https://uuid.wacton.xyz/
+Prototype demonstration available at https://waacton.github.io/Uuid/
 
 ## Examples
 
-| UUID                                   | Glyph                                                                                                          |
-|----------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| `2e34408f-bcbb-481a-81c1-b48eadd8dee9` | ![Glyph of 2e34408f-bcbb-481a-81c1-b48eadd8dee9](https://uuid.wacton.xyz/2e34408f-bcbb-481a-81c1-b48eadd8dee9) |
-| `eceff4bf-616a-4ebc-bb8b-88c0d04c566a` | ![Glyph of eceff4bf-616a-4ebc-bb8b-88c0d04c566a](https://uuid.wacton.xyz/eceff4bf-616a-4ebc-bb8b-88c0d04c566a) |
-| `40404640-e8ff-4e8e-a846-e840ffe8e8ff` | ![Glyph of 40404640-e8ff-4e8e-a846-e840ffe8e8ff](https://uuid.wacton.xyz/40404640-e8ff-4e8e-a846-e840ffe8e8ff) |
-| `ff1493d0-71ff-400e-97ff-7fffd474b3ff` | ![Glyph of ff1493d0-71ff-400e-97ff-7fffd474b3ff](https://uuid.wacton.xyz/ff1493d0-71ff-400e-97ff-7fffd474b3ff) |
+| UUID                                   | Glyph                                                                                                                              |
+|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `2e34408f-bcbb-481a-81c1-b48eadd8dee9` | ![Glyph of 2e34408f-bcbb-481a-81c1-b48eadd8dee9](https://uuid.waacton-cloudflare.workers.dev/2e34408f-bcbb-481a-81c1-b48eadd8dee9) |
+| `eceff4bf-616a-4ebc-bb8b-88c0d04c566a` | ![Glyph of eceff4bf-616a-4ebc-bb8b-88c0d04c566a](https://uuid.waacton-cloudflare.workers.dev/eceff4bf-616a-4ebc-bb8b-88c0d04c566a) |
+| `40404640-e8ff-4e8e-a846-e840ffe8e8ff` | ![Glyph of 40404640-e8ff-4e8e-a846-e840ffe8e8ff](https://uuid.waacton-cloudflare.workers.dev/40404640-e8ff-4e8e-a846-e840ffe8e8ff) |
+| `ff1493d0-71ff-400e-97ff-7fffd474b3ff` | ![Glyph of ff1493d0-71ff-400e-97ff-7fffd474b3ff](https://uuid.waacton-cloudflare.workers.dev/ff1493d0-71ff-400e-97ff-7fffd474b3ff) |
 
 ## Specification 1.0
 
