@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>UUID englyphenation</title>
+
+    <style>
+        /*
+          1. Use a more-intuitive box-sizing model.
+        */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /*
+          2. Remove default margin
+        */
+        * {
+            margin: 0;
+        }
+
+        /*
+          3. Allow percentage-based heights in the application
+        */
+        html, body {
+            height: 100%;
+        }
+
+        /*
+          Typographic tweaks!
+          4. Add accessible line-height
+          5. Improve text rendering
+        */
+        body {
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /*
+          6. Improve media defaults
+        */
+        img, picture, video, canvas, svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        /*
+          7. Remove built-in form typography styles
+        */
+        input, button, textarea, select {
+            font: inherit;
+        }
+
+        /*
+          8. Avoid text overflows
+        */
+        p, h1, h2, h3, h4, h5, h6 {
+            overflow-wrap: break-word;
+        }
+
+        /*
+          9. Custom defaults
+        */
+
+        :root {
+            --dark: #404046;
+            --less-dark: #606069;
+            --light: #E8E8FF;
+            --less-light: #DADAF0;
+            --light-half-opacity: #E8E8FF7F;
+        }
+
+        body {
+            background: var(--dark);
+            font-family: monospace;
+        }
+        
+        .max-width-wrapper {
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 10rem;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .image {
+            outline: 1px solid var(--light-half-opacity);
+            border-radius: 0.0625rem;
+
+            /* dimensions of the image returned from the server, also acts as a placeholder until image is retrieved */
+            width: 480px;
+            height: 480px;
+        }
+
+            /* used dynamically by script */
+            .image.highlight {
+                outline: 1px solid var(--light);
+            }
+
+        #inverted {
+            filter: invert(100%);
+        }
+        
+        .text {
+            color: var(--light-half-opacity);
+            font-size: 1.125rem;
+            letter-spacing: 0.15rem;
+            white-space: break-spaces;
+            text-align: center;
+        }
+
+            /* used dynamically by script */
+            .text.highlight {
+                color: var(--light); 
+            }
+        
+        button {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            color: var(--light-half-opacity);
+            font-size: 1rem;
+            border: 1px solid var(--light-half-opacity);
+            border-radius: 0.0625rem;
+        }
+
+            button:hover {
+                background: var(--less-dark);
+                color: var(--light);
+            }
+
+            button:active {
+                background: var(--light);
+                color: var(--dark);
+            }
+            
+        @media (pointer: coarse) {
+            button {
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body onload="generateUuid()">
+    <div class="max-width-wrapper">
+        <div class="column">
+            <div id="uuidImage" class="image"></div>
+            <pre id="uuidText" class="text">-</pre>
+            <button id="copyButton" onclick="copyUuid()">copy uuid</button>
+            <button onclick="generateUuid()">generate a new uuid</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    function copyUuid() {
+        const uuidImageElement = document.getElementById('uuidImage');
+        const uuidTextElement = document.getElementById('uuidText');
+        const uuid = uuidTextElement.textContent;
+        
+        navigator.clipboard.writeText(uuid);
+
+        uuidImageElement.classList.add("highlight");
+        uuidImageElement.style.boxShadow = `0 0 1rem 0.25rem #${uuid.substring(0, 6)}`
+        uuidTextElement.classList.add("highlight");
+        uuidTextElement.style.textShadow = `0px 0px 0.5rem #${uuid.substring(0, 6)}`
+    }
+    
+    function generateUuid() {
+        const uuid = crypto.randomUUID();
+        const svg = createSvg(uuid);
+
+        const uuidImageElement = document.getElementById('uuidImage');
+        const uuidTextElement = document.getElementById('uuidText');
+
+        uuidImageElement.innerHTML = svg;
+        uuidImageElement.classList.remove("highlight");
+        uuidImageElement.style.boxShadow = "";
+
+        uuidTextElement.textContent = uuid;
+        uuidTextElement.classList.remove("highlight");
+        uuidTextElement.style.textShadow = "";
+    }
+
+    function createSvg(uuid) {
+        const colors = getColours(uuid);
+        const rotation = getRotation(uuid);
+
+        return `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                <g transform="rotate(${rotation} 240 240)">
+                    <rect fill=${colors[0]} x="0" y="0" width="100%" height="100%" />
+                    <rect fill=${colors[1]} x="80" y="80" width="320" height="150" />
+                    <rect fill=${colors[2]} x="80" y="250" width="150" height="150" />
+                    <rect fill=${colors[3]} x="250" y="250" width="150" height="150" />
+                    <rect fill=${colors[0]} x="180" y="180" width="120" height="120" />
+                    <rect fill=${colors[4]} x="200" y="200" width="80" height="80" />
+                    <rect id="inverted" fill=${colors[0]} x="220" y="460" width="40" height="20" />
+                </g>
+            </svg>
+        `;
+    }
+
+    function getColours(uuid) {
+        const colours = [];
+        colours.push(uuid.slice(0, 6));
+        colours.push(uuid.slice(6, 8) + uuid.slice(9, 13));
+        colours.push(uuid.slice(15, 18) + uuid.slice(20, 23));
+        colours.push(uuid.slice(24, 30));
+        colours.push(uuid.slice(30, 36));
+        return colours.map(x => `#${x}`);
+    }
+
+    function getRotation(guid) {
+        let degrees;
+
+        switch (guid.charAt(19).toUpperCase()) {
+            case "8":
+                degrees = 0;
+                break;
+            case "9":
+                degrees = 90;
+                break;
+            case "A":
+                degrees = 180;
+                break;
+            case "B":
+                degrees = 270;
+                break;
+        }
+
+        return degrees;
+    }
+</script>
+</html>
