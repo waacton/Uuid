@@ -53,7 +53,7 @@ function copyUuid() {
 
 function copyUrl() {
     const uuid = elements.uuidText.textContent;
-    navigator.clipboard.writeText(`https://uuid.waacton-cloudflare.workers.dev/${uuid}`);
+    navigator.clipboard.writeText(`https://uuid.wacton.xyz/${uuid}`);
     applyHighlight(uuid);
 }
 
