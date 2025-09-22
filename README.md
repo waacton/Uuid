@@ -5,16 +5,16 @@ Display a unique glyph for each of the 5,316,911,983,139,663,491,615,228,241,121
 
 Choose a UUID based on how nice it looks!
 
-Prototype demonstration available at https://waacton.github.io/Uuid/
+Prototype demonstration available at https://uuid.wacton.xyz
 
 ## Examples
 
-| UUID                                   | Glyph                                                                                                                              |
-|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `2e34408f-bcbb-481a-81c1-b48eadd8dee9` | ![Glyph of 2e34408f-bcbb-481a-81c1-b48eadd8dee9](https://uuid.waacton-cloudflare.workers.dev/2e34408f-bcbb-481a-81c1-b48eadd8dee9) |
-| `eceff4bf-616a-4ebc-bb8b-88c0d04c566a` | ![Glyph of eceff4bf-616a-4ebc-bb8b-88c0d04c566a](https://uuid.waacton-cloudflare.workers.dev/eceff4bf-616a-4ebc-bb8b-88c0d04c566a) |
-| `40404640-e8ff-4e8e-a846-e840ffe8e8ff` | ![Glyph of 40404640-e8ff-4e8e-a846-e840ffe8e8ff](https://uuid.waacton-cloudflare.workers.dev/40404640-e8ff-4e8e-a846-e840ffe8e8ff) |
-| `ff1493d0-71ff-400e-97ff-7fffd474b3ff` | ![Glyph of ff1493d0-71ff-400e-97ff-7fffd474b3ff](https://uuid.waacton-cloudflare.workers.dev/ff1493d0-71ff-400e-97ff-7fffd474b3ff) |
+| UUID                                   | Glyph                                                                                                          |
+|----------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| `2e34408f-bcbb-481a-81c1-b48eadd8dee9` | ![Glyph of 2e34408f-bcbb-481a-81c1-b48eadd8dee9](https://uuid.wacton.xyz/2e34408f-bcbb-481a-81c1-b48eadd8dee9) |
+| `eceff4bf-616a-4ebc-bb8b-88c0d04c566a` | ![Glyph of eceff4bf-616a-4ebc-bb8b-88c0d04c566a](https://uuid.wacton.xyz/eceff4bf-616a-4ebc-bb8b-88c0d04c566a) |
+| `40404640-e8ff-4e8e-a846-e840ffe8e8ff` | ![Glyph of 40404640-e8ff-4e8e-a846-e840ffe8e8ff](https://uuid.wacton.xyz/40404640-e8ff-4e8e-a846-e840ffe8e8ff) |
+| `ff1493d0-71ff-400e-97ff-7fffd474b3ff` | ![Glyph of ff1493d0-71ff-400e-97ff-7fffd474b3ff](https://uuid.wacton.xyz/ff1493d0-71ff-400e-97ff-7fffd474b3ff) |
 
 ## Specification 1.0
 
@@ -27,6 +27,7 @@ The example in this section uses `2e34408f-bcbb-481a-81c1-b48eadd8dee9`.
 | Colour 3 | Concatenate characters 15, 16, 17, 20, 21, 22                | `81a1c1` |
 | Colour 4 | Concatenate characters 24, 25, 26, 27, 28, 29                | `b48ead` |
 | Colour 5 | Concatenate characters 30, 31, 32, 33, 34, 35                | `d8dee9` |
+| Colour 6 | Inverse of Colour 1                                          | `d1cbbf` |
 | Rotation | Character 19: `8` = 0° · `9` = 90° · `a` = 180° · `b` = 270° | `8` = 0° |
 
 Characters 8, 13, 18, 23 are ignored; they are `-` delimiters that do not change.

@@ -1,12 +1,21 @@
-﻿// this standalone JS can used in cloudflare workers to return embeddable SVG
+﻿// standalone JS used in cloudflare workers to return embeddable SVG
 
 export default {
     fetch: async function (request, env, ctx) {
         const url = new URL(request.url)
-        const uuid = url.pathname.substring(1)
+        const route = url.pathname.substring(1)
+
+        // fallback to default cloudflare handling in certain cases (no route, or trying to serve files)
+        // which should allow the request to continue on to the actual server, instead of being intercepted by this worker
+        if (route === '' || route.includes('.')) {
+            return fetch(request)
+        }
+
+        const uuid = route
         console.info({ message: 'UUID glyph requested', uuid: uuid });
 
         if (!isValidV4(uuid)) {
+            console.info({ message: 'Request is not a valid v4 UUID', uuid: uuid });
             return new Response(`${uuid} is not a valid v4 UUID`, {status: 400})
         }
 
@@ -26,19 +35,20 @@ function isValidV4(uuid) {
 function createSvg(uuid) {
     const colours = getColours(uuid);
     const rotation = getRotation(uuid);
+
     return `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
-            <g transform="rotate(${rotation} 240 240)">
-                <rect fill="${colours[0]}" x="0" y="0" width="100%" height="100%" />
-                <rect fill="${colours[1]}" x="80" y="80" width="320" height="150" />
-                <rect fill="${colours[2]}" x="80" y="250" width="150" height="150" />
-                <rect fill="${colours[3]}" x="250" y="250" width="150" height="150" />
-                <rect fill="${colours[0]}" x="180" y="180" width="120" height="120" />
-                <rect fill="${colours[4]}" x="200" y="200" width="80" height="80" />
-                <rect fill="${colours[5]}" x="220" y="460" width="40" height="20" />
-            </g>
-        </svg>
-    `;
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+        <g transform="rotate(${rotation} 240 240)">
+            <rect fill="${colours[0]}" x="0" y="0" width="100%" height="100%" />
+            <rect fill="${colours[1]}" x="80" y="80" width="320" height="150" />
+            <rect fill="${colours[2]}" x="80" y="250" width="150" height="150" />
+            <rect fill="${colours[3]}" x="250" y="250" width="150" height="150" />
+            <rect fill="${colours[0]}" x="180" y="180" width="120" height="120" />
+            <rect fill="${colours[4]}" x="200" y="200" width="80" height="80" />
+            <rect fill="${colours[5]}" x="220" y="460" width="40" height="20" />
+        </g>
+    </svg>
+  `;
 }
 
 function getColours(uuid) {
