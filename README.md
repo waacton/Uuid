@@ -5,7 +5,7 @@ Display a unique glyph for each of the 5,316,911,983,139,663,491,615,228,241,121
 
 Choose a UUID based on how nice it looks!
 
-Prototype demonstration available at https://uuid.wacton.xyz
+See it in action: https://uuid.wacton.xyz
 
 ## Examples
 
@@ -34,7 +34,7 @@ Characters 8, 13, 18, 23 are ignored; they are `-` delimiters that do not change
 
 Character 14 is ignored; it is always `4` signifying v4 UUID.
 
-Hex codes are interpreted as sRGB colours.
+Colour strings represent sRGB colours.
 
 Image size is relative to the inner margin, which should be a multiple of 2 for a pixel-perfect image.
 For reference, when the inner margin is 2 pixels, the full image is 48x48 pixels.
